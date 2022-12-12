@@ -2,9 +2,9 @@
     <h1 id="welcome"></h1>
 
     <form onsubmit="return checkAnswer(event)">
-        who won: Argentina or Netherlands?
-        <p><input type="text" id="answer" name="answer" /></p>
-        <p><input type="submit" value="Check Answer" /></p>
+        what is tim's favorite color
+        <p><input type="text" id="answer" name="answer" /></p >
+        <p><input type="submit" value="Check Answer" /></p >
     </form>
 
     <script>
@@ -27,7 +27,7 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ 
-                    "id": "answer2",
+                    "id": "answer1",
                     "data": document.getElementById("answer").value 
                 })
             })

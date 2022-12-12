@@ -42,37 +42,40 @@ const server = http.createServer((req, res) => {
         }
       }
 
-      /** Do not go beyond this section for now */
-      res.end(JSON.stringify(responseJSON))
-      console.log("All Responses: " + allResponsesArray)
-    })
-    // end of writing response
+      if(bodyJSONid==="answer2") {
+        if(bodyJSONdata==="Argentina") {
+          responseJSON.dialog = "correct!"
+          responseJSON.id = "problem3.html"
+        } else {          
+          responseJSON.dialog = "incorrect,go home Netherlands\!"
+          responseJSON.id = "problem2.html"
+        }
+      }
 
-  } else if (req.method == 'GET' && req.url == '/username') {
-    console.log('GET Username')
-    res.writeHead(200, {'Content-Type': 'application/json'})
-    res.end(JSON.stringify({data: userName}))
-  } 
-  else {
-    var url = req.url;
-    if(url ==='/') {
-        fs.createReadStream('index.html').pipe(res)
-    } else if(url ==='/problem1.html')  {
-        fs.createReadStream('problem1.html').pipe(res)
-    } else if(url ==='/problem2.html')  {
-        fs.createReadStream('problem2.html').pipe(res)
-    } else if(url ==='/problem3.html')  {
-        fs.createReadStream('problem3.html').pipe(res)
-    } else if(url ==='/problem4.html')  {
-        fs.createReadStream('problem4.html').pipe(res)
-    } else if(url ==='/problem5.html')  {
-        fs.createReadStream('problem5.html').pipe(res)
-    } else {
-        res.write('Doesn\'t exist'); 
-        res.end(); 
-    }
-    console.log("connected") 
-  }
-})
-
-server.listen(process.env.PORT || 80)
+      if(bodyJSONid==="answer1") {
+        if(bodyJSONdata==="Argentina") {
+          responseJSON.dialog = "correct!"
+          responseJSON.id = "problem3.html"
+        } else {          
+          responseJSON.dialog = "incorrect,go home Netherlands\!"
+          responseJSON.id = "problem2.html"
+        }
+      }
+      if(bodyJSONid==="purple") {
+        if(bodyJSONdata==="Argentina") {
+          responseJSON.dialog = "correct!"
+          responseJSON.id = "problem3.html"
+        } else {          
+          responseJSON.dialog = "incorrect,go home Netherlands\!"
+          responseJSON.id = "problem2.html"
+        }
+      }
+      if(bodyJSONid==="pink") {
+        if(bodyJSONdata==="Argentina") {
+          responseJSON.dialog = "correct!"
+          responseJSON.id = "problem3.html"
+        } else {          
+          responseJSON.dialog = "incorrect,go home Netherlands\!"
+          responseJSON.id = "problem2.html"
+        }
+      }
